@@ -8,7 +8,6 @@ import { useStorage } from '@vueuse/core'
 
 export default {
   setup() {
-    console.log(useStorage)
     const state = useStorage('num', 0)
     setTimeout(()=>{
       state.value += 1

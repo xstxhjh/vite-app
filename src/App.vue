@@ -4,6 +4,8 @@
   <useCounter />
   <useIdle />
   <useStorage />
+  <useBattery />
+  <useDeviceLight />
 </template>
 
 <script>
@@ -12,6 +14,8 @@ import useAsyncState from './components/state/useAsyncState.vue'
 import useCounter from './components/state/useCounter.vue'
 import useIdle from './components/state/useIdle.vue'
 import useStorage from './components/state/useStorage.vue'
+import useBattery from './components/sensors/useBattery.vue'
+import useDeviceLight from './components/sensors/useDeviceLight.vue'
 
 export default {
   name: 'App',
@@ -20,7 +24,9 @@ export default {
     useAsyncState,
     useCounter,
     useIdle,
-    useStorage
+    useStorage,
+    useBattery,
+    useDeviceLight
   }
 }
 </script>

@@ -1,5 +1,6 @@
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* 设置字体的抗锯齿 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

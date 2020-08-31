@@ -1,12 +1,6 @@
 <template>
   <pre>
-    {{
-      JSON.stringify(
-        state,
-        null,
-        2
-      )
-    }}
+    {{ JSON.stringify(state) }}
   </pre>
 </template>
 

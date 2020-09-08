@@ -6,6 +6,7 @@
   <useStorage />
   <useBattery />
   <useDeviceLight />
+  <useDeviceMotion />
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import useIdle from './components/state/useIdle.vue'
 import useStorage from './components/state/useStorage.vue'
 import useBattery from './components/sensors/useBattery.vue'
 import useDeviceLight from './components/sensors/useDeviceLight.vue'
+import useDeviceMotion from './components/sensors/useDeviceMotion.vue'
 
 export default {
   name: 'App',
@@ -26,7 +28,8 @@ export default {
     useIdle,
     useStorage,
     useBattery,
-    useDeviceLight
+    useDeviceLight,
+    useDeviceMotion
   }
 }
 </script>

@@ -7,9 +7,13 @@
   <useBattery />
   <useDeviceLight />
   <useDeviceMotion />
+
+  <custom-square l="100" c="red"></custom-square>
 </template>
 
 <script>
+import { reactive } from 'vue'
+
 import createGlobalState from './components/state/createGlobalState.vue'
 import useAsyncState from './components/state/useAsyncState.vue'
 import useCounter from './components/state/useCounter.vue'
@@ -29,7 +33,14 @@ export default {
     useStorage,
     useBattery,
     useDeviceLight,
-    useDeviceMotion
-  }
+    useDeviceMotion,
+  },
+  setup() {
+    const state = reactive({
+      customSize: 100,
+      customColor: 'red',
+    })
+    return { state }
+  },
 }
 </script>

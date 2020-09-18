@@ -6,7 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@vueuse/core": "^4.0.0-beta.9",
+    "@vueuse/core": "^4.0.0-beta.11",
     "axios": "^0.20.0",
     "vue": "^3.0.0-rc.1"
   },

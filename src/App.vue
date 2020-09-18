@@ -7,6 +7,7 @@
   <useBattery />
   <useDeviceLight />
   <useDeviceMotion />
+  <useOnStartTyping />
 
   <custom-square l="100" c="red"></custom-square>
 </template>
@@ -22,6 +23,7 @@ import useStorage from './components/state/useStorage.vue'
 import useBattery from './components/sensors/useBattery.vue'
 import useDeviceLight from './components/sensors/useDeviceLight.vue'
 import useDeviceMotion from './components/sensors/useDeviceMotion.vue'
+import useOnStartTyping from './components/sensors/useOnStartTyping.vue'
 
 export default {
   name: 'App',
@@ -34,6 +36,7 @@ export default {
     useBattery,
     useDeviceLight,
     useDeviceMotion,
+    useOnStartTyping
   },
   setup() {
     const state = reactive({

@@ -10,6 +10,10 @@
   <useOnStartTyping />
 
   <custom-square l="100" c="red"></custom-square>
+
+  <a-button type="primary">
+    Primary
+  </a-button>
 </template>
 
 <script>

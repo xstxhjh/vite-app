@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { reactive, getCurrentInstance  } from 'vue'
 
 import createGlobalState from './components/state/createGlobalState.vue'
 import useAsyncState from './components/state/useAsyncState.vue'
@@ -42,12 +42,16 @@ export default {
     useDeviceMotion,
     useOnStartTyping
   },
-  setup() {
+  setup(props, context) {
     const state = reactive({
       customSize: 100,
       customColor: 'red',
     })
+
+    const internalInstance = getCurrentInstance()
+    console.log(internalInstance.ctx.$message)
+
     return { state }
-  },
+  }
 }
 </script>

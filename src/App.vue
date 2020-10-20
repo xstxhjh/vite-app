@@ -9,15 +9,13 @@
   <useDeviceMotion />
   <useOnStartTyping />
 
-  <custom-square l="100" c="red"></custom-square>
+  <custom-square :l="customSize" :c="customColor"></custom-square>
 
-  <a-button type="primary">
-    Primary
-  </a-button>
+  <a-button type="primary"> Primary </a-button>
 </template>
 
 <script>
-import { reactive, getCurrentInstance  } from 'vue'
+import { reactive, getCurrentInstance, onMounted, toRefs } from 'vue'
 
 import createGlobalState from './components/state/createGlobalState.vue'
 import useAsyncState from './components/state/useAsyncState.vue'
@@ -40,18 +38,18 @@ export default {
     useBattery,
     useDeviceLight,
     useDeviceMotion,
-    useOnStartTyping
+    useOnStartTyping,
   },
   setup(props, context) {
     const state = reactive({
       customSize: 100,
       customColor: 'red',
     })
-
-    const internalInstance = getCurrentInstance()
-    console.log(internalInstance.ctx.$message)
-
-    return { state }
-  }
+    setTimeout(()=>{
+      state.customSize = 150
+      state.customColor = 'blue'
+    }, 1000)
+    return { ...toRefs(state) }
+  },
 }
 </script>

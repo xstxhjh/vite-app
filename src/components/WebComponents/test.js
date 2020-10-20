@@ -44,6 +44,7 @@ function updateStyle(elem) {
       width: ${elem.getAttribute('l')}px;
       height: ${elem.getAttribute('l')}px;
       background-color: ${elem.getAttribute('c')};
+      transition: all 1s;
     }
   `
 }

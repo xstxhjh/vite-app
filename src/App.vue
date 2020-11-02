@@ -1,5 +1,5 @@
 <template>
-  <createGlobalState />
+  <!-- <createGlobalState />
   <useAsyncState />
   <useCounter />
   <useIdle />
@@ -9,9 +9,9 @@
   <useDeviceMotion />
   <useOnStartTyping />
 
-  <custom-square :l="customSize" :c="customColor"></custom-square>
+  <custom-square :l="customSize" :c="customColor"></custom-square> -->
 
-  <a-button type="primary"> Primary </a-button>
+  <invitation />
 </template>
 
 <script>
@@ -26,6 +26,7 @@ import useBattery from './components/sensors/useBattery.vue'
 import useDeviceLight from './components/sensors/useDeviceLight.vue'
 import useDeviceMotion from './components/sensors/useDeviceMotion.vue'
 import useOnStartTyping from './components/sensors/useOnStartTyping.vue'
+import invitation from './components/Template/invitation.vue'
 
 export default {
   name: 'App',
@@ -39,13 +40,14 @@ export default {
     useDeviceLight,
     useDeviceMotion,
     useOnStartTyping,
+    invitation,
   },
   setup(props, context) {
     const state = reactive({
       customSize: 100,
       customColor: 'red',
     })
-    setTimeout(()=>{
+    setTimeout(() => {
       state.customSize = 150
       state.customColor = 'blue'
     }, 1000)

@@ -3,12 +3,16 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue'
+
 export default {
-  data() {
-    return {
-      color: 'red'
-    }
-  }
+  setup() {
+    const state = reactive({
+      color: 'red',
+    })
+
+    return { ...toRefs(state) }
+  },
 }
 </script>
 

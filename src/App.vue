@@ -11,7 +11,9 @@
 
   <custom-square :l="customSize" :c="customColor"></custom-square> -->
 
-  <invitation />
+  <!-- <invitation /> -->
+
+  <styleVars />
 </template>
 
 <script>
@@ -26,7 +28,10 @@ import useBattery from './components/sensors/useBattery.vue'
 import useDeviceLight from './components/sensors/useDeviceLight.vue'
 import useDeviceMotion from './components/sensors/useDeviceMotion.vue'
 import useOnStartTyping from './components/sensors/useOnStartTyping.vue'
+
 import invitation from './components/Template/invitation.vue'
+
+import styleVars from './components/RFC/style-vars/index.vue'
 
 export default {
   name: 'App',
@@ -41,6 +46,7 @@ export default {
     useDeviceMotion,
     useOnStartTyping,
     invitation,
+    styleVars
   },
   setup(props, context) {
     const state = reactive({

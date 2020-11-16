@@ -7,11 +7,11 @@
   <useBattery />
   <useDeviceLight />
   <useDeviceMotion />
-  <useOnStartTyping />
+  <useOnStartTyping /> -->
 
-  <custom-square :l="customSize" :c="customColor"></custom-square> -->
+  <!-- <custom-square :l="customSize" :c="customColor"></custom-square> -->
 
-  <!-- <invitation /> -->
+  <!-- <inputType /> -->
 
   <styleVars />
 </template>
@@ -29,7 +29,7 @@ import useDeviceLight from './components/sensors/useDeviceLight.vue'
 import useDeviceMotion from './components/sensors/useDeviceMotion.vue'
 import useOnStartTyping from './components/sensors/useOnStartTyping.vue'
 
-import invitation from './components/Template/invitation.vue'
+import inputType from './components/Template/inputType.vue'
 
 import styleVars from './components/RFC/style-vars/index.vue'
 
@@ -45,7 +45,7 @@ export default {
     useDeviceLight,
     useDeviceMotion,
     useOnStartTyping,
-    invitation,
+    inputType,
     styleVars
   },
   setup(props, context) {

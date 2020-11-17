@@ -3,12 +3,14 @@
 </template>
 
 <script>
-import { reactive, toRefs } from 'vue'
+import { reactive, toRefs, getCurrentInstance } from 'vue'
 
 export default {
   setup() {
+    const { ctx } = getCurrentInstance()
+    
     const state = reactive({
-      color: 'red',
+      color: ctx.color,
       font: {
         size: '2em',
       },

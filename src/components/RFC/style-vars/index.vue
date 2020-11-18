@@ -10,11 +10,11 @@ export default {
     const state = reactive({
       font: {
         size: '2em',
-      }
+      },
     })
 
     useCssVars((_ctx) => ({
-      color: _ctx.color
+      color: _ctx.color,
     }))
 
     return { ...toRefs(state) }
@@ -32,11 +32,7 @@ export default {
   font-size: var(--fontSize);
 }
 
-  /* .text {
-    color: var(--v-bind:color);
-
-    shorthand + nested property access
-    font-size: var(--font.size);
-  }  */
-
+/* .text {
+  color: v-bind(color);
+} */
 </style>

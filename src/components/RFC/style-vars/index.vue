@@ -2,24 +2,19 @@
   <div class="text">hello</div>
 </template>
 
-<script>
+<script setup>
 import { reactive, toRefs, useCssVars } from 'vue'
 
-export default {
-  setup() {
-    const state = reactive({
-      font: {
-        size: '2em',
-      },
-    })
+useCssVars((_ctx) => ({
+  color: _ctx.color,
+}))
 
-    useCssVars((_ctx) => ({
-      color: _ctx.color,
-    }))
-
-    return { ...toRefs(state) }
+export const state = reactive({
+  font: {
+    size: '2em',
   },
-}
+})
+
 </script>
 
 <style vars="{ color }">

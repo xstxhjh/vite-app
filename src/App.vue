@@ -6,7 +6,7 @@
 
 <script setup>
 import { reactive, toRefs } from "vue";
-import styleVars from "./components/RFC/style-vars/index.vue";
+import styleVars from "./components/RFC/style-vars.vue";
 
 const state = reactive({
   customSize: 100,

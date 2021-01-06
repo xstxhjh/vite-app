@@ -5,7 +5,7 @@ export default
     }
 
     constructor() {
-        super()
+        super() // 初始化this值
 
         const shadow = this.attachShadow({ mode: 'open' })
 

@@ -3,9 +3,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from "vue";
 
-const color = ref('#0000ee')
+const color = ref("#0000ee");
+
 </script>
 
 <style scoped>

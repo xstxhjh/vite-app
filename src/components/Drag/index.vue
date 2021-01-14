@@ -2,14 +2,11 @@
   <div class="container">
     <div
       v-for="item in data"
-      :key="item.key"
-      :class="{ 'dragstart-activated': state.dragstartKey == item.key }"
-      @dragstart="dragstart(item)"
-      @dragenter="dragenter(item)"
-      @dragend="dragend(item)"
-      draggable="true"
+      :key="item"
+      v-drag:[props.data]="item"
+      @change="fn"
     >
-      {{ item }} {{ state.dragstartItem }}
+      {{ item }}
     </div>
   </div>
 </template>
@@ -28,19 +25,9 @@ let data = unref(props.data);
 
 const state = reactive({ dragstartKey: undefined });
 
-const dragstart = (index) => {
-  console.log(index);
-  state.dragstartKey = index;
-};
-
-const dragenter = (index) => {
-  console.log(index, "dragenter");
-};
-
-const dragend = (index) => {
-  console.log(index, "dragend");
-  state.dragstartKey = undefined;
-};
+const fn = ()=>{
+  console.log('haha')
+}
 </script>
 
 <style scoped>
@@ -75,9 +62,5 @@ const dragend = (index) => {
   cursor: grab;
   /* cursor: grabbing; */
   /* user-select: none; */
-}
-
-.dragstart-activated {
-  opacity: 0.6;
 }
 </style>

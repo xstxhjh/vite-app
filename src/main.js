@@ -9,4 +9,39 @@ app.config.globalProperties = {
   mainColor: '#0000ee'
 }
 
+let dragstartKey = undefined
+let dragenterKey = undefined
+app.directive('drag', {
+  mounted(el, binding, vnode) {
+    let arr = binding.arg
+    let key = vnode.key
+    el.draggable = true
+    const dragstart = (e) => {
+      dragstartKey = key
+      el.dispatchEvent(new Event('change'));
+
+    };
+
+    const dragenter = (e) => {
+      dragenterKey = key
+    };
+
+    const dragleave = (e) => {
+    };
+
+    const dragend = (e) => {
+      // let data = arr[dragstartKey]
+      // arr.splice(dragstartKey, 1)
+      // arr.splice(dragenterKey, 0, data)
+      // console.log(data)
+    };
+
+    el.addEventListener('dragstart', dragstart);
+    el.addEventListener('dragenter', dragenter);
+    el.addEventListener('dragleave', dragleave);
+    el.addEventListener('dragend', dragend);
+
+  }
+})
+
 app.mount('#app')

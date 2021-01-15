@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div
-      v-for="item in data"
-      :key="item"
-      v-drag:[props.data]="item"
-      @dragchange="fn"
+      v-for="(item, index) in state.data"
+      :key="index"
+      v-showing
+      @show="showFn"
     >
       {{ item }}
     </div>
@@ -21,13 +21,14 @@ const props = defineProps({
   },
 });
 
-let data = unref(props.data);
+const state = reactive({
+  data: props.data
+});
 
-const state = reactive({ dragstartKey: undefined });
-
-const fn = (e)=>{
+const showFn = (e)=>{
   console.log(e)
 }
+
 </script>
 
 <style scoped>

@@ -9,39 +9,30 @@ app.config.globalProperties = {
   mainColor: '#0000ee'
 }
 
-let dragstartKey = undefined
-let dragenterKey = undefined
-app.directive('drag', {
-  mounted(el, binding, vnode) {
-    let arr = binding.arg
-    let key = vnode.key
-    el.draggable = true
-    const dragstart = (e) => {
-      dragstartKey = key
-      const event = new Event('dragchange')
-      event.key = key
-      el.dispatchEvent(event);
-    };
+app.directive('showing', {
+  mounted(element, binding, vnode) {
 
-    const dragenter = (e) => {
-      dragenterKey = key
-    };
+    const event = new Event('show')
 
-    const dragleave = (e) => {
-    };
+    const handleScroll = () => {
+      let elementIsVisible = false;
 
-    const dragend = (e) => {
-      // let data = arr[dragstartKey]
-      // arr.splice(dragstartKey, 1)
-      // arr.splice(dragenterKey, 0, data)
-      // console.log(data)
-    };
+      const document = window.document;
+      const rect = element.getBoundingClientRect();
 
-    el.addEventListener('dragstart', dragstart);
-    el.addEventListener('dragenter', dragenter);
-    el.addEventListener('dragleave', dragleave);
-    el.addEventListener('dragend', dragend);
+      elementIsVisible =
+        rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <=
+        (window.innerWidth || document.documentElement.clientWidth) &&
+        rect.bottom >= 0 &&
+        rect.right >= 0;
 
+      event.show = elementIsVisible
+      element.dispatchEvent(event);
+    }
+
+    window.addEventListener("scroll", handleScroll);
   }
 })
 

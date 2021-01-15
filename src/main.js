@@ -18,8 +18,9 @@ app.directive('drag', {
     el.draggable = true
     const dragstart = (e) => {
       dragstartKey = key
-      el.dispatchEvent(new Event('change'));
-
+      const event = new Event('dragchange')
+      event.key = key
+      el.dispatchEvent(event);
     };
 
     const dragenter = (e) => {

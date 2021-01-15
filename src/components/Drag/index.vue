@@ -4,7 +4,7 @@
       v-for="item in data"
       :key="item"
       v-drag:[props.data]="item"
-      @change="fn"
+      @dragchange="fn"
     >
       {{ item }}
     </div>
@@ -25,8 +25,8 @@ let data = unref(props.data);
 
 const state = reactive({ dragstartKey: undefined });
 
-const fn = ()=>{
-  console.log('haha')
+const fn = (e)=>{
+  console.log(e)
 }
 </script>
 

@@ -30,7 +30,7 @@ console.log(ctx);
   background-color: antiquewhite;
   margin: auto;
   display: grid;
-  height: 10000px;
+  height: 100px;
   /* 定义每一列宽度,重复3次,1片段,(3列) */
   /* grid-template-columns: repeat(3, 1fr); */
 

@@ -3,8 +3,8 @@
     <div
       v-for="(item, index) in state.data"
       :key="index"
-      v-showing
-      @show="showFn"
+      v-display:[option]="index"
+      @display="displayFn"
     >
       {{ item }}
     </div>
@@ -25,7 +25,12 @@ const state = reactive({
   data: props.data
 });
 
-const showFn = (e)=>{
+const option = {
+  wait: 600,
+  maxWait: 2000
+}
+
+const displayFn = (e)=>{
   console.log(e)
 }
 

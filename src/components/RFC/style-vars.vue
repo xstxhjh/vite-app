@@ -3,19 +3,14 @@
   <!-- <div class="container">
     <div v-for="item in arr" :key="item">{{item}}</div>
   </div> -->
-  <Drag :data="arr"/>
 </template>
 
 <script setup>
 import { ref, getCurrentInstance } from "vue";
 
-import Drag from '../Drag/index.vue'
-
 const color = ref("#0000ee");
 
 const { ctx } = getCurrentInstance();
-
-const arr = ref([1,2,3,4,5,6,7,8,9])
 
 console.log(ctx._.appContext.config.globalProperties.mainColor);
 console.log(ctx);

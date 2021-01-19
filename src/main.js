@@ -9,6 +9,8 @@ app.config.globalProperties = {
   mainColor: '#0000ee'
 }
 
+console.log(app.use)
+
 app.directive('showing', {
   mounted(element, binding, vnode) {
 

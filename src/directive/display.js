@@ -33,12 +33,12 @@ const display = {
 }
 
 function throttle(fn, wait, maxWait) {
-  var timeout = null,
+  let timeout = null,
     startTime = Date.parse(new Date);
 
   return function () {
     if (timeout !== null) clearTimeout(timeout);
-    var curTime = Date.parse(new Date);
+    const curTime = Date.parse(new Date);
     if (curTime - startTime >= maxWait) {
       fn();
       startTime = curTime;

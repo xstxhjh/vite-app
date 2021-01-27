@@ -48,5 +48,4 @@ function throttle(fn, wait, maxWait) {
   }
 }
 
-
 export default display;

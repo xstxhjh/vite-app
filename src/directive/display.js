@@ -4,31 +4,36 @@ const display = {
     const event = new CustomEvent('display', { detail: {} })
 
     const key = binding.value
-    const wait = binding.arg.wait || 0
-    const maxWait = binding.arg.maxWait || undefined
-
     event.detail.key = key
 
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        event.detail.show = entry.isIntersecting
+        element.dispatchEvent(event);
+      });
+    });
+    observer.observe(element);
 
-    const handleScroll = () => {
-      let elementIsVisible = false;
+    // const wait = binding.arg.wait || 0
+    // const maxWait = binding.arg.maxWait || undefined
+    // const handleScroll = () => {
+    //   let elementIsVisible = false;
 
-      const document = window.document;
-      const rect = element.getBoundingClientRect();
+    //   const document = window.document;
+    //   const rect = element.getBoundingClientRect();
 
-      elementIsVisible =
-        rect.top <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.left <=
-        (window.innerWidth || document.documentElement.clientWidth) &&
-        rect.bottom >= 0 &&
-        rect.right >= 0;
+    //   elementIsVisible =
+    //     rect.top <=
+    //     (window.innerHeight || document.documentElement.clientHeight) &&
+    //     rect.left <=
+    //     (window.innerWidth || document.documentElement.clientWidth) &&
+    //     rect.bottom >= 0 &&
+    //     rect.right >= 0;
 
-      event.detail.show = elementIsVisible
-      element.dispatchEvent(event);
-    }
-
-    window.addEventListener("scroll", throttle(handleScroll, wait, maxWait));
+    //   event.detail.show = elementIsVisible
+    //   element.dispatchEvent(event);
+    // }
+    // window.addEventListener("scroll", throttle(handleScroll, wait, maxWait));
   }
 }
 

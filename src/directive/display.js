@@ -13,27 +13,37 @@ const display = {
       });
     });
     observer.observe(element);
+  }
+}
 
-    // const wait = binding.arg.wait || 0
-    // const maxWait = binding.arg.maxWait || undefined
-    // const handleScroll = () => {
-    //   let elementIsVisible = false;
 
-    //   const document = window.document;
-    //   const rect = element.getBoundingClientRect();
+const displayOld = {
+  mounted(element, binding, vnode) {
+    const event = new CustomEvent('display', { detail: {} })
 
-    //   elementIsVisible =
-    //     rect.top <=
-    //     (window.innerHeight || document.documentElement.clientHeight) &&
-    //     rect.left <=
-    //     (window.innerWidth || document.documentElement.clientWidth) &&
-    //     rect.bottom >= 0 &&
-    //     rect.right >= 0;
+    const key = binding.value
+    event.detail.key = key
 
-    //   event.detail.show = elementIsVisible
-    //   element.dispatchEvent(event);
-    // }
-    // window.addEventListener("scroll", throttle(handleScroll, wait, maxWait));
+    const wait = binding.arg.wait || 0
+    const maxWait = binding.arg.maxWait || undefined
+    const handleScroll = () => {
+      let elementIsVisible = false;
+
+      const document = window.document;
+      const rect = element.getBoundingClientRect();
+
+      elementIsVisible =
+        rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <=
+        (window.innerWidth || document.documentElement.clientWidth) &&
+        rect.bottom >= 0 &&
+        rect.right >= 0;
+
+      event.detail.show = elementIsVisible
+      element.dispatchEvent(event);
+    }
+    window.addEventListener("scroll", throttle(handleScroll, wait, maxWait));
   }
 }
 

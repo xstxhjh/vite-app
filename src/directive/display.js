@@ -17,7 +17,7 @@ const display = {
   }
 }
 
-// 旧方法,性能方面不如 IntersectionObserver
+// 旧方法,性能略差 IntersectionObserver
 const displayOld = {
   mounted(element, binding, vnode) {
     const event = new CustomEvent('display', { detail: {} })

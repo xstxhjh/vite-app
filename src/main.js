@@ -1,14 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import './components/WebComponents/test.js'
-
 const app = createApp(App)
+
+import './components/WebComponents/test.js'
 
 app.config.globalProperties = {
   mainColor: '#0000ee'
 }
-
 
 import { display } from './directive'
 

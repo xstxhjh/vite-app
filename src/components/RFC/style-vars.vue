@@ -1,24 +1,18 @@
 <template>
   <div class="text">hello</div>
-  <!-- <div class="container">
-    <div v-for="item in arr" :key="item">{{item}}</div>
-  </div> -->
 </template>
 
 <script setup>
 import { ref, getCurrentInstance } from "vue";
 
-const color = ref("#0000ee");
-
 const { ctx } = getCurrentInstance();
 
-console.log(ctx._.appContext.config.globalProperties.mainColor);
-console.log(ctx);
+const color = ctx.mainColor;
 </script>
 
 <style scoped>
 .text {
-  color: v-bind(color);
+  color: v-bind("color");
 }
 
 .container {

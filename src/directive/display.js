@@ -8,7 +8,6 @@ const display = {
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
-        console.log(entry)
         event.detail.show = entry.isIntersecting
         element.dispatchEvent(event);
       });

@@ -3,7 +3,7 @@
 
   <styleVars />
 
-  <Drag :data="arr" />
+  <!-- <Drag :data="arr" /> -->
 
   <div style="height: 1000px;"></div>
 </template>

@@ -10,6 +10,7 @@ app.config.globalProperties = {
 
 import './components/WebComponents/test.js'
 
+// 元素受否显示触发指令
 import { display } from './directive'
 app.directive('display', display)
 

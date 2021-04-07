@@ -8,7 +8,8 @@ app.config.globalProperties = {
   mainColor: '#0000ee'
 }
 
-import './components/WebComponents/test.js'
+import square from './components/WebComponents/square.js'
+customElements.define('custom-square', square)
 
 // 元素受否显示触发指令
 import { display } from './directive'

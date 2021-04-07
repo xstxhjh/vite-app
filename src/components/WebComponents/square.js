@@ -35,8 +35,6 @@ export default
     }
 }
 
-customElements.define('custom-square', Square)
-
 function updateStyle(elem) {
     const shadow = elem.shadowRoot
     shadow.querySelector('style').textContent = `

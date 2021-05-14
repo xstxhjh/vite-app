@@ -1,11 +1,11 @@
-<template>
-  <custom-square :l="state.customSize" :c="state.customColor"></custom-square>
+<template lang="pug">
+customSquare(:l="state.customSize" :c="state.customColor")
 
-  <styleVars />
+styleVars
 
-  <Drag :data="arr" />
+Drag(:data="arr")
 
-  <SvgIcon name="2021"></SvgIcon>
+SvgIcon(name="2021")
 </template>
 
 <script setup>

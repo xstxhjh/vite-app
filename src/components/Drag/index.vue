@@ -21,7 +21,7 @@
 </script>
 
 <script setup>
-import { ref, unref, reactive, defineProps } from "vue";
+import { ref, unref, reactive } from "vue";
 
 const props = defineProps({
   data: {

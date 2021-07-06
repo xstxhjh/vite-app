@@ -5,7 +5,7 @@ styleVars
 
 Drag(:data="arr" @click="dragClickFn" name="2021" ref="RefComp")
 
-SvgIcon(name="2021" ref="RefComp1")
+SvgIcon(name="2021" class="svg-icon")
 </template>
 
 <script setup>
@@ -35,3 +35,10 @@ onMounted(()=>{
   console.log(ctx.$refs.RefComp.option)
 })
 </script>
+
+<style scoped lang="scss">
+.svg-icon {
+  width: 500px;
+  background-color: aquamarine;
+}
+</style>

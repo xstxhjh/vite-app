@@ -3,13 +3,13 @@ custom-square(:l="state.customSize" :c="state.customColor")
 
 styleVars
 
-Drag(:data="arr"  @click="dragClickFn" name="2021")
+Drag(:data="arr" @click="dragClickFn" name="2021" ref="RefComp")
 
-SvgIcon(name="2021")
+SvgIcon(name="2021" ref="RefComp1")
 </template>
 
 <script setup>
-import { reactive, toRefs, ref } from "vue";
+import { reactive, toRefs, ref, getCurrentInstance, onMounted } from "vue";
 import styleVars from "src/components/RFC/style-vars.vue";
 import Drag from "src/components/Drag/index.vue";
 
@@ -28,4 +28,10 @@ setTimeout(() => {
 const dragClickFn = (item) => {
   console.log(item);
 };
+
+const { ctx } = getCurrentInstance();
+onMounted(()=>{
+  // 子组件暴露的数据
+  console.log(ctx.$refs.RefComp.option)
+})
 </script>

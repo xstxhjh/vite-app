@@ -38,6 +38,10 @@ const option = {
   wait: 600,
   maxWait: 2000
 }
+
+defineExpose({
+  option
+})
 </script>
 
 <style scoped>

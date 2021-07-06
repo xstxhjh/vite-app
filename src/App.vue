@@ -1,9 +1,9 @@
 <template lang="pug">
-customSquare(:l="state.customSize" :c="state.customColor")
+custom-square(:l="state.customSize" :c="state.customColor")
 
 styleVars
 
-Drag(:data="arr")
+Drag(:data="arr"  @click="dragClickFn" name="2021")
 
 SvgIcon(name="2021")
 </template>
@@ -24,4 +24,8 @@ setTimeout(() => {
   state.customSize = 150;
   state.customColor = "blue";
 }, 1000);
+
+const dragClickFn = (item) => {
+  console.log(item);
+};
 </script>

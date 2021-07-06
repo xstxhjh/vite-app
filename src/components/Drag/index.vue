@@ -5,11 +5,20 @@
       :key="index"
       v-display:[option]="index"
       @display="displayFn"
+      v-bind="$attrs"
     >
       {{ item }}
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'CustomName',
+    inheritAttrs: false,
+    customOptions: {},
+  }
+</script>
 
 <script setup>
 import { ref, unref, reactive, defineProps } from "vue";
@@ -29,11 +38,6 @@ const option = {
   wait: 600,
   maxWait: 2000
 }
-
-const displayFn = (e)=>{
-  console.log(e)
-}
-
 </script>
 
 <style scoped>

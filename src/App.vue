@@ -5,7 +5,7 @@ styleVars
 
 Drag(:data="arr" @click="dragClickFn" name="2021" ref="RefComp")
 
-SvgIcon(name="2021" class="svg-icon")
+SvgIcon(name="2021" class="svg-icon"  ref="svgIcon")
 </template>
 
 <script setup>
@@ -30,9 +30,13 @@ const dragClickFn = (item) => {
 };
 
 const { ctx } = getCurrentInstance();
+const svgIcon = ref(null)
+const RefComp = ref(null)
 onMounted(()=>{
-  // 子组件暴露的数据
+  // 不要使用 getCurrentInstance 的 $refs
   console.log(ctx.$refs.RefComp.option)
+  console.log(svgIcon)
+  console.log(RefComp)
 })
 </script>
 

@@ -1,16 +1,27 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+
 import path from 'path';
 const projectRootDir = path.resolve(__dirname);
-console.log(path.resolve(__dirname), process.cwd())
 
 import viteSvgIcons from 'vite-plugin-svg-icons';
 
-import alias from '@rollup/plugin-alias';
-
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: "./",
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  },
+  server: {
+    port: 4000,
+    open: true,
+    proxy: {
+      '/api': 'http://127.0.0.1:5000'
+    },
+    cors: true
+  },
   plugins: [
     vue(),
     viteSvgIcons({
@@ -19,10 +30,12 @@ export default defineConfig({
       // 指定symbolId格式
       symbolId: 'icon-[dir]-[name]',
     }),
-    alias({
-      entries: [
-        { find: 'src', replacement: path.resolve(projectRootDir, 'src') },
-      ]
-    })
-  ]
+  ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/scss/global.scss";'
+      }
+    }
+  }
 })

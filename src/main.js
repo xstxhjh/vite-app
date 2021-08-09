@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import 'vite-plugin-svg-icons/register';
 
 const app = createApp(App)
 
@@ -15,7 +14,12 @@ customElements.define('custom-square', square)
 import { display } from './directive'
 app.directive('display', display)
 
+import 'virtual:svg-icons-register'
 import SvgIcon from './components/SvgIcon.vue'
 app.component('SvgIcon', SvgIcon)
+
+import router from "./router"
+import store from "./store"
+app.use(router).use(store)
 
 app.mount('#app')

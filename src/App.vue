@@ -1,4 +1,6 @@
 <template lang="pug">
+router-view
+
 custom-square(:l="state.customSize" :c="state.customColor")
 
 styleVars
@@ -10,8 +12,8 @@ SvgIcon(name="2021" class="svg-icon"  ref="svgIcon")
 
 <script setup>
 import { reactive, toRefs, ref, getCurrentInstance, onMounted } from "vue";
-import styleVars from "src/components/RFC/style-vars.vue";
-import Drag from "src/components/Drag/index.vue";
+import styleVars from "@/components/RFC/style-vars.vue";
+import Drag from "@/components/Drag/index.vue";
 
 const arr = ref([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 

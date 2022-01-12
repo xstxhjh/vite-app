@@ -8,8 +8,8 @@ export const useSomeStore = defineStore('some', {
     }
   },
   actions: {
-    changeStr() {
-      this.str = ''
+    changeStr(value) {
+      this.str = value
     },
   },
 })

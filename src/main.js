@@ -19,7 +19,10 @@ import SvgIcon from './components/SvgIcon.vue'
 app.component('SvgIcon', SvgIcon)
 
 import router from "./router"
-import store from "./store"
-app.use(router).use(store)
+import pinia from "./store"
+
+app
+.use(router)
+.use(pinia)
 
 app.mount('#app')

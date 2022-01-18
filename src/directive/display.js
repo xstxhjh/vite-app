@@ -4,7 +4,6 @@ const display = {
     const event = new CustomEvent('display', { detail: {} })
     const key = binding.value
     event.detail.key = key
-
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         event.detail.show = entry.isIntersecting

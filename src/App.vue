@@ -46,5 +46,6 @@ onMounted(()=>{
 .svg-icon {
   width: 500px;
   background-color: aquamarine;
+  margin-bottom: 100vh;
 }
 </style>

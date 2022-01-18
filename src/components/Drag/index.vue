@@ -39,6 +39,10 @@ const option = {
   maxWait: 2000
 }
 
+const displayFn = (value)=>{
+  console.log(value)
+}
+
 defineExpose({
   option
 })
